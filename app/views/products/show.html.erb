@@ -1,0 +1,26 @@
+<h1>Detalhes do Produto</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Preço Unitário:</strong>
+  <%= @product.unit_price %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @product.quantity %>
+</p>
+
+<%= link_to 'Editar', edit_product_path(@product) %> |
+<%= link_to 'Voltar', products_path %>

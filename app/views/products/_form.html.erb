@@ -1,0 +1,24 @@
+<% if @product.errors.any? %>
+  <ul>
+    <% @product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for(@product) do |f| %>
+  <div class="form-group">
+    <div class="row">
+      <div class="form-inputs">
+        <%= f.input :name, label: 'Nome' %>
+        <%= f.input :description, label: 'Descrição' %>
+        <%= f.input :unit_price, label: 'Preço' %>
+        <%= f.input :quantity, label: 'Quantidade' %>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.button :submit, value: 'Cadastrar', class: 'btn btn-success' %>
+      <%= link_to 'Voltar', products_path, class: 'btn btn-warning' %>
+    </div>
+  </div>
+<% end %>
